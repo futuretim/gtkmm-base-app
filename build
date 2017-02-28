@@ -1,0 +1,61 @@
+#!/bin/bash
+
+APP_DIR=baseapp
+APP_ID=com.sharedpointer.gtkmm.BaseApp
+MANIFEST_FILE=com.sharedpointer.gtkmm.BaseApp.json
+REPO_NAME=local-repo
+REPO_DIR=/home/tim/flatpak-repo
+SHELL=bash
+
+function build() 
+{
+    rm -rf ${APP_DIR}/*
+	flatpak-builder --repo=${REPO_DIR} ${APP_DIR} ${MANIFEST_FILE}
+}
+
+function run()
+{
+    flatpak run ${APP_ID}
+}
+
+function shell()
+{
+	flatpak run --command=${SHELL} ${APP_ID}
+}
+
+function install() 
+{
+    flatpak install ${REPO_NAME} ${APP_ID}
+}
+
+function uninstall() 
+{
+    flatpak uninstall ${APP_ID}
+}
+
+case "$1" in
+    build)
+        build
+        ;;
+
+    run)
+        run
+        ;;
+
+    shell)
+        shell
+        ;;
+
+    install)
+        install
+        ;;
+
+    uninstall)
+        uninstall
+        ;;
+        
+    *)
+
+        echo $"Usage: $0 {build}"
+        exit 1
+esac
