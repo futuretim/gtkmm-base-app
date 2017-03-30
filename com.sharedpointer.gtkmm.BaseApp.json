@@ -1,8 +1,9 @@
 {
     "id": "com.sharedpointer.gtkmm.BaseApp",
+    "version": "master",
     "runtime": "org.gnome.Platform",
-    "sdk": "org.gnome.Sdk",
     "runtime-version": "3.22",
+    "sdk": "org.gnome.Sdk",
     "build-options" : {
         "cflags": "-O2 -g",
         "cxxflags": "-O2 -g",
@@ -10,7 +11,7 @@
             "V": "1"
         }
     },
-      
+
     "cleanup": [],
     "modules": [
         {
@@ -93,4 +94,3 @@
         }
     ]
 }
-

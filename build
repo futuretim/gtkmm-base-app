@@ -4,7 +4,7 @@ APP_DIR=baseapp
 APP_ID=com.sharedpointer.gtkmm.BaseApp
 MANIFEST_FILE=com.sharedpointer.gtkmm.BaseApp.json
 REPO_NAME=local-repo
-REPO_DIR=/home/tim/flatpak-repo
+REPO_DIR=${HOME}/local-flatpak-repo
 SHELL=bash
 
 function build() 
